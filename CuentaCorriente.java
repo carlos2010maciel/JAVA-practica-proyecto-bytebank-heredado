@@ -14,4 +14,9 @@ public class CuentaCorriente extends Cuenta {
 		return super.saca(valor + comision);
 	}
 
+	@Override
+	public void deposita(double valor) {
+		this.saldo = this.saldo + valor;
+	}
+
 }
