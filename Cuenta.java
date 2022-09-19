@@ -5,7 +5,7 @@ public abstract class Cuenta {
     protected double saldo;
     private int agencia = 1;
     private int numero;
-    private Cliente titular = new Cliente();
+    private Cliente titular = new Cliente(); //Composición de objeto. Es como un objeto dentro de otro.
 
     private static int total;
     

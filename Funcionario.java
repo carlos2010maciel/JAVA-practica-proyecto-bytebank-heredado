@@ -1,6 +1,9 @@
 
 public abstract class Funcionario { //abstract indica que Funcionario es una clase abstracta
 	
+	//La clase abstracta puede tener atributos privados
+	//La clase puede tener variables
+	//La clase abstracta puede tener constructor
 	private String nombre;
 	private String documento;
 	private double salario;
