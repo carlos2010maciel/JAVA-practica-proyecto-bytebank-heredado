@@ -15,7 +15,21 @@ public abstract class Cuenta {
     }
 
     public Cuenta(int agencia, int numero) {
-        this.agencia = agencia;
+    	
+    	/*
+    	Verifico los valores en el constructor de la clase
+    	Si es incorrecto lanzo la excepción
+    	IllegalArgumentException
+    	*/
+        if (agencia < 1) {
+        	throw new IllegalArgumentException("Agencia Inválida");
+        }
+        
+        if(numero < 1) {
+            throw new IllegalArgumentException("Número de cuenta inválido");
+        }
+        
+    	this.agencia = agencia;
         this.numero = numero;
         System.out.println("Estoy creando una cuenta " + this.numero);
 
