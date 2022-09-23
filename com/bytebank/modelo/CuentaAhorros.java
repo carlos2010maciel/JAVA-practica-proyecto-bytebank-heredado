@@ -1,3 +1,4 @@
+package com.bytebank.modelo;
 
 public class CuentaAhorros extends Cuenta {
 	//Toda clase que extiende de una clase abstraca

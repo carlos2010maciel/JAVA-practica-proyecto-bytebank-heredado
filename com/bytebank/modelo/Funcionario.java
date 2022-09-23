@@ -1,3 +1,4 @@
+package com.bytebank.modelo;
 
 public abstract class Funcionario { //abstract indica que Funcionario es una clase abstracta
 	

@@ -1,3 +1,7 @@
+package com.bytebank.test;
+
+import com.bytebank.modelo.CuentaAhorros;
+import com.bytebank.modelo.CuentaCorriente;
 
 public class TestCuenta {
 	public static void main(String[] args) {

@@ -1,3 +1,9 @@
+package com.bytebank.test;
+
+import com.bytebank.modelo.Cuenta;
+import com.bytebank.modelo.CuentaCorriente;
+import com.bytebank.modelo.SaldoInsuficienteException;
+
 public class TestSacar {
 
         public static void main(String[] args) {
