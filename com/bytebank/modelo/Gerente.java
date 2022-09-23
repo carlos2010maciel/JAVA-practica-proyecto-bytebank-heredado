@@ -15,7 +15,7 @@ public class Gerente extends Funcionario implements Autenticable{
 	public double getBonificacion() {
 		System.out.println("EJECUTANDO DESDE GERENTE");
 		
-		// ELIMINO ESTA LÍNEA SOLO A LOS FINES DE EVITAR ERROR DE COMPILACIÓN
+		// ELIMINO ESTA LINEA SOLO A LOS FINES DE EVITAR ERROR DE COMPILACION
 		//return super.getSalario() + this.getSalario() * 0.05;
 		
 		return 2000;

@@ -6,7 +6,7 @@ public interface Autenticable {
 	
 	public boolean iniciarSesion(String clave);
 	//Una interfaz no puede extender de una clase
-	//Puede extender de otra interfaz, SÍ
+	//Puede extender de otra interfaz
 	
 	//En las interfaces todos los métodos son abstractos
 	//Son abstractos porque no están implementados

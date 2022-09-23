@@ -1,5 +1,18 @@
 package com.bytebank.modelo;
 
+/*
+ * Comentario en bloque
+ */
+
+// Comentario de una sola línea
+
+//Lo de abajo es javadoc
+/**
+ * Cuenta va a crear nuevas instancias de CuentaCorriente
+ * @version 1.0
+ * @author Horacio
+ *
+ */
 public abstract class Cuenta {
 	
 	//MODIFICADORES DE ACCESO -> Delimita el alcance
@@ -15,11 +28,19 @@ public abstract class Cuenta {
 
     private static int total;
     
+    /**
+     * Instancia una nueva cuenta sin parametros
+     */
     //Constructor por defecto
     public Cuenta() {
     	
     }
 
+    /**
+     * Instancia una cuenta usando agencia y numero
+     * @param agencia
+     * @param numero
+     */
     public Cuenta(int agencia, int numero) {
     	
     	/*
@@ -44,7 +65,12 @@ public abstract class Cuenta {
 
 	public abstract void deposita(double valor);
 
-    public void saca(double valor) throws SaldoInsuficienteException {
+    /**
+     * Este metodo retira dinero de la cuenta y si ocurre un error devuelve ua excepcion
+     * @param valor
+     * @throws SaldoInsuficienteException
+     */
+	public void saca(double valor) throws SaldoInsuficienteException {
     	if (this.saldo < valor) {
     		throw new SaldoInsuficienteException("No tienes saldo");
     	}
