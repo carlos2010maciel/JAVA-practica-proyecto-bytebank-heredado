@@ -66,7 +66,7 @@ public abstract class Cuenta {
 	public abstract void deposita(double valor);
 
     /**
-     * Este metodo retira dinero de la cuenta y si ocurre un error devuelve ua excepcion
+     * Este metodo retira dinero de la cuenta y si ocurre un error devuelve una excepcion
      * @param valor
      * @throws SaldoInsuficienteException
      */

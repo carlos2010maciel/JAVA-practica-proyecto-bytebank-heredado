@@ -1,5 +1,12 @@
 package com.bytebank.modelo;
 
+/**
+ * Clase que representa a un cliente en ByteBank
+ * 
+ * @version 1.0
+ * @author Horacio
+ *
+ */
 
 public class Cliente implements Autenticable{
 
@@ -13,11 +20,11 @@ public class Cliente implements Autenticable{
     	this.util = new AutenticacionUtil(); //Composición de objeto
     	//La composición es para que no inicie en NULL
     }
-
+    
     public String getNombre() {
         return nombre;
     }
-
+    
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
