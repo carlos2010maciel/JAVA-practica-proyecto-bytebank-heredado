@@ -127,5 +127,10 @@ public abstract class Cuenta {
     public static int getTotal() {
         return Cuenta.total;
     }
+    
+    @Override
+    public String toString() {
+        return "Numero: " + this.numero + ", Agencia: " + this.agencia;
+    }
 
 }

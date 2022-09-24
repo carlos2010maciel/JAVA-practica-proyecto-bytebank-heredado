@@ -25,5 +25,10 @@ public class CuentaCorriente extends Cuenta implements Tributacion{
     public double getValorImpuesto() {
         return super.saldo * 0.01;
     }
+	
+	@Override
+	public String toString() {
+	    return "CuentaCorriente: " + super.toString();
+	}
 
 }

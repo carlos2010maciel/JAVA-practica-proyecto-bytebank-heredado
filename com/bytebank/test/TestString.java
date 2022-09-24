@@ -1,5 +1,7 @@
 package com.bytebank.test;
 
+import com.bytebank.modelo.CuentaAhorros;
+
 public class TestString {
 	
 	public static void main(String[] args) {
@@ -38,6 +40,39 @@ public class TestString {
 		nombre2 = nombre2.replace("AU", cs);
 
 		System.out.println("Después de StringBuilder: " + nombre2);
+		
+		printLine(nombre);
+		printLine(letra); 
+		printLine(indice);
+		printLine(new CuentaAhorros(200, 300));
 	}
+	
+		/*
+		 * Lo de abajo no es una buenas práctica
+		
+		public static void printLine(int valor) {
+			System.out.println(valor);
+		}
+		
+		
+		//En el casod e una letra imprime el valor en código ASCII
+		public static void printLine(String valor) {
+			System.out.println(valor);
+		}
+		
+		public static void printLine(char valor) {
+			System.out.println(valor);
+		}
+		
+		*/
+	
+		/*
+		 * FORMA CORRECTA
+		 * Llamando a la clase Object (Padre) 
+		 * 
+		 */
+		public static void printLine(Object valor) {
+			System.out.println(valor);
+		}
 
 }
