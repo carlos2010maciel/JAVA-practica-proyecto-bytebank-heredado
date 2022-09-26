@@ -8,10 +8,16 @@ public class TestMain {
 	 * void: indica que es método que no retorna valor
 	 * main: indica que es el método principal
 	 * String: un tipo de objeto que almacena una secuencia de caracteres
-	 * Los Corchetes:
+	 * Los Corchetes: 
 	 * args: argumentos
 	 */
 	public static void main(String[] args) {
+		
+		/*
+		for (int i = 0; i < args.length; i++) {
+			System.out.println(args[i]);
+		}
+		*/
 		
 		int edad = 20;
 		int edad2 = 15;
