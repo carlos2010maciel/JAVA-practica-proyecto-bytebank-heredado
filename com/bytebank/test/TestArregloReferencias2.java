@@ -9,6 +9,7 @@ public class TestArregloReferencias2 {
 	public static void main(String[] args) {
 		
 		// alterando el tipo
+		
         Cuenta[] cuentas = new Cuenta[5];
         CuentaCorriente cc1 = new CuentaCorriente(22, 11);
         cuentas[0] = cc1;

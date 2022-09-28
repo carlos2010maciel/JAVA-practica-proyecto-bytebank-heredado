@@ -12,7 +12,9 @@ public class TestMain {
 	 * args: argumentos
 	 */
 	public static void main(String[] args) {
-		
+		for (int i = 0;i < args.length; i++ ) {
+			System.out.println(args[i]);
+		}
 		/*
 		for (int i = 0; i < args.length; i++) {
 			System.out.println(args[i]);
@@ -35,6 +37,7 @@ public class TestMain {
 		System.out.println("La longitud del array es " + tamanioArray);
 		
 		//imprimo todos los valores del array
+		//length solo me dice el tamaño del array
 		for (int i = 0; i < edades.length; i++) {
 			System.out.println(edades[i]);
 		}
