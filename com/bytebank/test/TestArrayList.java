@@ -1,6 +1,8 @@
 package com.bytebank.test;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 import com.bytebank.modelo.Cliente;
 import com.bytebank.modelo.Cuenta;
@@ -13,7 +15,27 @@ public class TestArrayList {
 		//<> Forzando a que acepte un solo tipo de cuenta
 		//<> operador diamante
 		//<Cuenta> se denomina generic
-		ArrayList<Cuenta> lista = new ArrayList<>();
+		//List<Cliente> listaClientes = new LinkedList<>();
+		
+		//Usando cualquiera de ellos el código funciona
+		//TODAS las implementaciones son listas
+		//List<Cuenta> lista = new ArrayList<Cuenta>(); //usa array por debajo
+        //List<Cuenta> lista = new LinkedList<Cuenta>(); //lista linkeada
+        //List<Cuenta> lista = new Vector<Cuenta>(); //usa array por debajo, pero también es threadsafe
+		
+		
+		//Interfaz				LinkedList
+		//List<Cuenta> lista = new LinkedList<>();
+		
+		//Especifíco el tipo de dato Cuenta
+		//En el primer <> es obligatorio
+		//En el segundo <> NO es obligatorio
+		//No puedo extender directamente de Collection
+		List<Cuenta> lista = new ArrayList<>();
+		
+		//Uso de Vector 	----->>> Ya casi que no se usa
+		//El Vector es Thread Safe
+		//List<Cuenta> lista = new Vector<Cuenta>();
 		
 		//Referencia		//Objeto --->HEAP
 		Cuenta cc = new CuentaCorriente(11, 22);
