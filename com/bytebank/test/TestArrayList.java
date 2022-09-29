@@ -14,8 +14,11 @@ public class TestArrayList {
 		//<> operador diamante
 		//<Cuenta> se denomina generic
 		ArrayList<Cuenta> lista = new ArrayList<>();
+		
+		//Referencia		//Objeto --->HEAP
 		Cuenta cc = new CuentaCorriente(11, 22);
 		Cuenta cc2 = new CuentaCorriente(13, 42);
+		Cuenta cc3 = new CuentaCorriente(11, 22);
 		
 		//Método para agregar
 		lista.add(cc);
@@ -32,7 +35,7 @@ public class TestArrayList {
 		
 		//for
 		//recorro todo el ArrayList
-		//El método .size e retorna la cantidad de paámetos del ArrayList
+		//El método .size e retorna la cantidad de parámetos del ArrayList
 		for (int i = 0; i < lista.size(); i++) {
 			System.out.println(lista.get(1));
 		}
@@ -42,6 +45,21 @@ public class TestArrayList {
 		for (Cuenta cuenta : lista) {
 			System.out.println(cuenta);
 		}
+		
+		//Pregunto si el ArrayList contiene la referencia al objeto
+		boolean contiene = lista.contains(cc3);
+		//Comparo por referencias
+		if (contiene) {
+			System.out.println("Sí, es igual con equals");
+		}
+		
+		/*
+		 * Este método no utilizo porque lo mismo hace equals
+		//Comparo por valores
+		if (cc.esIgual(cc3)) {
+			System.out.println("Sí, son iguales");
+		}
+		*/
 	}
 
 }

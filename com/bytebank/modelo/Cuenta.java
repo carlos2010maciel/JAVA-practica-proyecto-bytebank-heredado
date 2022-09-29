@@ -82,7 +82,6 @@ public abstract class Cuenta {
             try {
 				this.saca(valor);
 			} catch (SaldoInsuficienteException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
             destino.deposita(valor);
@@ -131,6 +130,44 @@ public abstract class Cuenta {
     @Override
     public String toString() {
         return "Numero: " + this.numero + ", Agencia: " + this.agencia;
+    }
+    
+    /*
+     * No utilizo este método porque en su lugr uso equals
+    public boolean esIgual(Cuenta cuenta) {
+    	return this.agencia == cuenta.getAgencia() &&
+    			this.numero == cuenta.getNumero();
+    }
+    */
+    
+    
+    //equals hace lo mismo que el método esIgual
+    /*
+    @Override
+    public boolean equals(Object obj) {
+    	//Comparación basada en valores y no en referencias
+    					//Cast
+    	Cuenta cuenta = (Cuenta) obj;
+    	return this.agencia == cuenta.getAgencia() &&
+    			this.numero == cuenta.getNumero();
+    }
+    */
+    
+    // verifica si una cuenta es igual a otra
+    @Override
+    public boolean equals(Object ref){
+    	
+    	Cuenta otra = (Cuenta) ref;
+
+        if(this.agencia != otra.agencia){
+            return false;
+        }
+
+        if(this.numero != otra.numero){
+            return false;
+        }
+
+        return true;
     }
 
 }
