@@ -27,7 +27,7 @@ public class TestArrayList {
 		//Interfaz				LinkedList
 		//List<Cuenta> lista = new LinkedList<>();
 		
-		//Especifíco el tipo de dato Cuenta
+		//Especifico el tipo de dato Cuenta
 		//En el primer <> es obligatorio
 		//En el segundo <> NO es obligatorio
 		//No puedo extender directamente de Collection
