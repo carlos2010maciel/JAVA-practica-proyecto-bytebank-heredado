@@ -13,7 +13,7 @@ package com.bytebank.modelo;
  * @author Horacio
  *
  */
-public abstract class Cuenta {
+public abstract class Cuenta implements Comparable<Cuenta> {
 	
 	//MODIFICADORES DE ACCESO -> Delimita el alcance
 	// public -> accesible en todos lados
@@ -129,7 +129,8 @@ public abstract class Cuenta {
     
     @Override
     public String toString() {
-        return "Numero: " + this.numero + ", Agencia: " + this.agencia;
+        return "Numero: " + this.numero + ", Agencia: " + this.agencia + 
+        			", Titular: " + this.titular.getNombre();
     }
     
     /*
@@ -169,5 +170,14 @@ public abstract class Cuenta {
 
         return true;
     }
+    
+    //compareTo() ----> Método de la interfaz Comparable
+	@Override
+	public int compareTo(Cuenta c) {
+		// Orden natural: Número de Agencia
+		return Integer.compare(this.agencia, c.getAgencia());
+		//Orden natural: Saldo
+		//return Double.compare(this.getSaldo(), c.getSaldo());
+	}
 
 }
