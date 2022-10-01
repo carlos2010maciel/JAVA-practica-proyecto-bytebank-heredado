@@ -51,9 +51,7 @@ public class TestLamba {
 		//Implementación del método compare usando LAMBA
 		//Interfaz funcional
 		// -> Lamba
-		lista.sort((Cuenta c1, Cuenta c2) ->
-				Integer.compare(c1.getNumero(), c2.getNumero())
-		);
+		lista.sort((c1, c2) -> Integer.compare(c1.getNumero(), c2.getNumero()));
 		
 		System.out.println("Después de ordenar");
 		for (Cuenta cuenta: lista) {
@@ -61,6 +59,7 @@ public class TestLamba {
 		}
 		
 		//Implementación del método compareTo usando LAMBA
+		//Java infiere que si lista es de Cuentas entonces c1 y c2 sí o sí tienen que ser cuentas
 		Collections.sort(lista, (c1, c2) ->
 				c1.getTitular().getNombre()
 					.compareTo(c2.getTitular().getNombre())
@@ -71,9 +70,13 @@ public class TestLamba {
 //			System.out.println(cuenta);
 //		}
 		//Consumer --- Interfaz funcional
+		//Consumer es un consumidor, no retorna nada
+		//Consumer simplemente ejecuta una cosa
+		//Consumer es del tipo VOID
 		//Envío un solo parámetro
+		//lista.forEach(cuenta -> System.out.println(cuenta + ", " + cuenta.getTitular().getNombre()));
 		lista.forEach(cuenta -> System.out.println(cuenta));
-
+		
 		Collections.sort(lista);
 
 		System.out.println("Después de ordenar por orden natural");
