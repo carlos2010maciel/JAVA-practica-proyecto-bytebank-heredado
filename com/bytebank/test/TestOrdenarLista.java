@@ -53,8 +53,17 @@ public class TestOrdenarLista {
 		//Formanormal desde Java 8
 		//				Cualquier clase hija de Cuenta
 		//Comparator c? extend Cuenta> c 
-		Comparator<Cuenta> comparator = new OrdenadorPorNumeroCuenta();
-		lista.sort(comparator);
+		//Comparator<Cuenta> comparator = new OrdenadorPorNumeroCuenta(); //Implementación de la interfaz
+		//lista.sort(comparator);
+		//Llamada al método compare
+		//CLSE ANÓNIMA
+		lista.sort(new Comparator<Cuenta>(){ 
+			@Override
+			public int compare(Cuenta c1, Cuenta c2) {
+				return Integer.compare(c1.getNumero(), c2.getNumero());
+			}
+		});
+		
 		
 		//Algoritmo de ordenación por número de cuenta
 		System.out.println("Después de ordenar");
@@ -66,7 +75,18 @@ public class TestOrdenarLista {
 		//lista.sort(new OrdenadorPorNombreTitular()); //Interfaz funcional
 		
 		//Forma antigua
-		Collections.sort(lista, new OrdenadorPorNombreTitular());
+//		Collections.sort(lista, new OrdenadorPorNombreTitular());
+				
+		//CLASE ANÓNIMA porque no vemos ninguna clase
+		//JAVA crea una clase en el momento que compila, imlementa y la llama
+		Collections.sort(lista, new Comparator<Cuenta>() {
+			@Override
+			public int compare(Cuenta c1, Cuenta c2) {
+				return c1.getTitular().getNombre()
+					.compareTo(c2.getTitular().getNombre());
+			}
+		}); 
+		
 		
 		//Algoritmo de ordenación por nombre de titular
 		System.out.println("Después de ordenar por nombre del titular");
@@ -112,11 +132,12 @@ public class TestOrdenarLista {
 }
 
 
-class OrdenadorPorNumeroCuenta implements Comparator<Cuenta> {
+//Estas clases no son un objeto
+//class OrdenadorPorNumeroCuenta implements Comparator<Cuenta> {
 	
-	//Método para ordenar
-	@Override
-	public int compare(Cuenta c1, Cuenta c2) {
+//	Método para ordenar
+//	@Override
+//	public int compare(Cuenta c1, Cuenta c2) {
 		//Forma básica
 //		if (c1.getNumero() == c2.getNumero()) {
 //			return 0;
@@ -127,22 +148,22 @@ class OrdenadorPorNumeroCuenta implements Comparator<Cuenta> {
 //		}
 		
 		//Forma Intermedia
-		//return c1.getNumero() - c2.getNumero();
+//		return c1.getNumero() - c2.getNumero();
 		
 		//Forma Wrapper
-		return Integer.compare(c1.getNumero(), c2.getNumero());
-	}
-}
+//		return Integer.compare(c1.getNumero(), c2.getNumero());
+//	}
+//}
 
 
-class OrdenadorPorNombreTitular implements Comparator<Cuenta> {
-	@Override
+//class OrdenadorPorNombreTitular implements Comparator<Cuenta> {
+//	@Override
+////	public int compare(Cuenta c1, Cuenta c2) {
+////    String nombreC1 = c1.getTitular().getNombre();
+////    String nombreC2 = c2.getTitular().getNombre();
+////    return nombreC1.compareTo(nombreC2);
 //	public int compare(Cuenta c1, Cuenta c2) {
-//    String nombreC1 = c1.getTitular().getNombre();
-//    String nombreC2 = c2.getTitular().getNombre();
-//    return nombreC1.compareTo(nombreC2);
-	public int compare(Cuenta c1, Cuenta c2) {
-		return c1.getTitular().getNombre()
-				.compareTo(c2.getTitular().getNombre());
-	}
-}
+//		return c1.getTitular().getNombre()
+//				.compareTo(c2.getTitular().getNombre());
+//	}
+//}
